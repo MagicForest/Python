@@ -14,7 +14,7 @@ def add(firstOperand, secondOperand):
     return firstOperand + secondOperand
 
 
-def substract(firstOperand, secondOperand):
+def subtract(firstOperand, secondOperand):
     return firstOperand - secondOperand
 
 
@@ -35,5 +35,5 @@ def pow(firstOperand, secondOperand):
 
 
 def calculate(firstOperand, operator, secondOperand):
-    operatorMappingFunc = {'+': add, '-': substract, '*': multiply, '/': divide, '%': mod, '**': pow}
+    operatorMappingFunc = {'+': add, '-': subtract, '*': multiply, '/': divide, '%': mod, '**': pow}
     return operatorMappingFunc[operator](firstOperand, secondOperand)
