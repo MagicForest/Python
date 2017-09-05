@@ -1,14 +1,15 @@
 import string
 
 def convert_number_to_ip(number):
-    numbers = [number & 0x000000FF, number >> 8 & 0x000000FF, number >> 16 & 0x000000FF, number >> 24 & 0x000000FF]
+    numbers = [number & 0xFF, (number >> 8) & 0xFF, (number >> 16) & 0xFF, (number >> 24) & 0xFF]
     return '.'.join(str(i) for i in reversed(numbers))
     # return '.'.join(str(i) for i in numbers[::-1])
 
 
 def convert_ip_to_number(ip):
     numbers = [int(i) for i in string.split(ip, '.')]
-    return numbers[-1] + numbers[-2] << 8 + numbers[-3] << 16 + numbers[-4] << 24
+    number = numbers[-1] + (numbers[-2] << 8) + (numbers[-3] << 16) + (numbers[-4] << 24)
+    return number
 
 def test_convert_number_to_ip():
     # 11000000 10101000 00000000 01100101
@@ -23,6 +24,7 @@ def test_convert_ip_to_number():
 
 def test():
     test_convert_number_to_ip()
+    test_convert_ip_to_number()
 
 
 if __name__ == '__main__':
