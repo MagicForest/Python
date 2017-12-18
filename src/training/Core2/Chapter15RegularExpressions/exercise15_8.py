@@ -1,7 +1,7 @@
 import re
 
 
-def match_int(a_string):
+def match_long(a_string):
     result = re.search('-?\d+[Ll]', a_string)
     if result is not None:
         return result.group()
