@@ -2,7 +2,7 @@ import re
 
 
 def match_float(a_string):
-    result = re.search('-?\d+(.\d+)?', a_string)
+    result = re.search('-?\d+(\.\d*)?', a_string)
     if result is not None:
         return result.group()
 
